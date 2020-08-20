@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3999
+const PORT = process.env.PORT || 3000
 
 // parsing data
 

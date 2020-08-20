@@ -26,7 +26,7 @@ class DB {
   }
 
   removeNote(id) {
-      console.log("remoiving note with id: ", id)
+      console.log("removing note with id: ", id)
       return this.readNotes()
       .then(notes => notes.filter(note => note.id != id))
       .then(fNotes => this.writeFile(fNotes))

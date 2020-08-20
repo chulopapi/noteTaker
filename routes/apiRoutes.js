@@ -3,7 +3,7 @@ const DB = require("../db/DB.js");
 const uuidv1 = require('uuid/v1');
 
 
-// GET 
+// GET route
 router.get("/notes", async (req, res) => {
     try {
       const existingNote = await DB.readNotes();
@@ -14,7 +14,7 @@ router.get("/notes", async (req, res) => {
     }
   });
 
-  // POST
+  // POST route
 
   router.post("/notes", async (req, res) => {
     try {

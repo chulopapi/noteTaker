@@ -10,9 +10,11 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Port listening configuration
+//In order to make request to the server involving data we use api base
+app.use('/api', require('./routes/apiRoutes'))
+app.use('/', require('./routes/htmlRoutes'))
 
-// Listen for ports
+// Port listening configuration
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT} !`);
   });

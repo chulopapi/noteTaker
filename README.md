@@ -9,7 +9,7 @@
 `Please clone my repository at: https://github.com/chulopapi/noteTaker.  You will need to install all npm packages and dependencies.`
 
 # Usage
-`This application access stored notes and has the ability to add/remove notes.  I used Express server, back end and front end was provided. All you have to go to https://note-taker-chulopapi.herokuapp.com/.`
+`This application access stored notes and has the ability to add/remove notes.  I used Express.js server, back end and front end was provided. All you have to go to https://note-taker-chulopapi.herokuapp.com/.`
 
 # Contribution
 `If you would like to contribute, clone my repo and add functionality.`

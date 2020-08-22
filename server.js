@@ -7,7 +7,7 @@ const path = require("path");
 
 // parsing data
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
@@ -22,4 +22,4 @@ app.use(apiRoutes);
 
 app.listen(PORT, function () {
     console.log("App listening on PORT: " + PORT);
-  });
+});

@@ -1,6 +1,11 @@
+
+// Deleting notes
+
 const fs = require ('fs');
 const path = require('path');
 const util = require('util');
+
+ //allow to chain promisses
 
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
@@ -24,7 +29,7 @@ class Note {
             }
             notesArr.push(this);
             await writeFileAsync(path.join(__dirname, "../db/db.json"), JSON.stringify(notesArr));
-            return "New note added"
+            return "New note has been added"
         } catch (err) {
             throw err
         }
@@ -39,7 +44,7 @@ async function deleteNote(id){
         notesArr = JSON.parse(notesArr)
         notesArr = notesArr.filter(element => element.id != parseInt(id))
         await writeFileAsync(path.join(__dirname, "../db/db.json"), JSON.stringify(notesArr));
-        return "Note Deleted"
+        return "Note has been Deleted"
     } catch(err){
         throw err
     }
@@ -50,42 +55,3 @@ module.exports = {
     deleteNote: deleteNote
 }
 
-
-
-
-
-
-// const fs = require("fs");
-// const util = require("util");
-// //allow to chain promisses
-// const readFAsync = util.promisify(fs.readFile);
-// const writeFAsync = util.promisify(fs.writeFile);
-// class DB {
-//   readFile() {
-//     return readFAsync("./db/db.json", "utf8");
-//   }
-//   // This is fs.writeFile(file,data[,options],callback)
-//   writeFile(rawNote) {
-//     return writeFAsync("./db/db.json", JSON.stringify(rawNote), "utf8");
-//   }
-
-//   readNotes() {
-//     return this.readFile().then((notes) => {
-//       return JSON.parse(notes);
-//     });
-//   }
-
-//   writeNote(newNote) {
-//     console.log("NEW NOTE=>", newNote);
-//     return this.writeFile(newNote).then((notes) => {
-//       return this.readNotes();
-//     });
-//   }
-
-//   removeNote(id) {
-//       console.log("removing note with id: ", id)
-//       return this.readNotes()
-//       .then(notes => notes.filter(note => note.id != id))
-//       .then(fNotes => this.writeFile(fNotes))
-//   }
-// }
